@@ -117,11 +117,19 @@ function tesimonial_by_archon_shortcode( $atts ) {
     }
     
 	$htmlString = null;
-	$htmlString .= '<div class="tesimonial_content">' . $row->content . '</div>';
-	$htmlString .= '<div class="tesimonial_author">' . $row->author . '</div>';
+	$htmlString .= '<blockquote class="testimonial"><p>' . $row->content . '</p></blockquote>';
+	$htmlString .= '<p class="testimonial-author">' . $row->author . '</p>';
 	return $htmlString;
 
 }
 add_shortcode( 'tesimonial', 'tesimonial_by_archon_shortcode' );
+
+
+function wpse_load_plugin_css() {
+    $plugin_url = plugin_dir_url( __FILE__ );
+
+    wp_enqueue_style( 'style1', $plugin_url . 'css/main.css' );
+}
+add_action( 'wp_enqueue_scripts', 'wpse_load_plugin_css' );   
 
 ?>
