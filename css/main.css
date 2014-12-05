@@ -14,7 +14,7 @@ blockquote.testimonial {
 blockquote.testimonial:before, blockquote.testimonial:after {
     content: "\201C";
     position: absolute;
-    font-size: 80px;
+    font-size: 5em;
     line-height: 1;
     color: #999;
     font-style: normal;
@@ -37,9 +37,10 @@ blockquote.testimonial:after {
     border-top: 15px solid #B7EDFF;
     margin: 0 0 0 25px;
 }
-.testimonial-author {
+blockquote.testimonial ~ p.testimonial-author {
     margin: 0 0 0 25px;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
     color: #999;
-    text-align:left;
+    text-align: right;
 }
