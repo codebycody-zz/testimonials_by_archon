@@ -50,14 +50,12 @@
 
 					<div class="postbox">
 					
-						<h3><span>Most Recent Testimonials</span></h3>
+						<h3><span>Most Recent Testimonial</span></h3>
 						<div class="inside">
-							<p>Below are your 10 most recent testimonials</p>
 							<ul>
-								<?php for ($i=1; $i<3; $i++) { ?>
-									<li><?php 
-									 ?></li>
-								<?php } ?>
+							<li>
+								<?php echo do_shortcode('[tesimonial]'); ?>
+							</li>
 							</ul>
 						</div> <!-- .inside -->
 					

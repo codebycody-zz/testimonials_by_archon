@@ -13,7 +13,6 @@
 /*
  * Assign global variables
  */
-
 $plugin_url = WP_PLUGIN_URL . '/testimonials-by-archon.php';
 $plugin_table = 'testimonials_by_archon';
 
@@ -125,11 +124,10 @@ function tesimonial_by_archon_shortcode( $atts ) {
 add_shortcode( 'tesimonial', 'tesimonial_by_archon_shortcode' );
 
 
-function wpse_load_plugin_css() {
-    $plugin_url = plugin_dir_url( __FILE__ );
-
-    wp_enqueue_style( 'style1', $plugin_url . 'css/main.css' );
+function safely_add_stylesheet_to_admin() {
+	wp_enqueue_style( 'prefix-style', plugins_url('css/main.css', __FILE__) );
 }
-add_action( 'wp_enqueue_scripts', 'wpse_load_plugin_css' );   
+add_action( 'admin_enqueue_scripts', 'safely_add_stylesheet_to_admin' );
+
 
 ?>
