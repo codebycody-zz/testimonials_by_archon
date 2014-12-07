@@ -56,6 +56,9 @@
 							<li>
 								<?php echo do_shortcode('[tesimonial]'); ?>
 							</li>
+							<li>
+								<?php echo do_shortcode('[tesimonial id=random]'); ?>
+							</li>
 							</ul>
 						</div> <!-- .inside -->
 					
@@ -74,10 +77,12 @@
 					
 						<h3><span>Shortcode exsamples</span></h3>
 						<div class="inside">
-							<p>[tesimonial id="5"]</p>
-							<?php echo do_shortcode('[tesimonial id=1]'); ?>
 							<p>[tesimonial]</p>
 							<?php echo do_shortcode('[tesimonial]'); ?>
+							<p>[tesimonial id=1]</p>
+							<?php echo do_shortcode('[tesimonial id=1]'); ?>
+							<p>[tesimonial id=random]</p>
+							<?php echo do_shortcode('[tesimonial id=random]'); ?>
 						</div> <!-- .inside -->
 						
 					</div> <!-- .postbox -->

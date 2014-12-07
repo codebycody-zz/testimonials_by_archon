@@ -107,10 +107,13 @@ function tesimonial_by_archon_shortcode( $atts ) {
     $a = shortcode_atts( array(
         'id' => null,
     ), $atts );
-    
     if($a['id'] == null){
     	$row = $wpdb->get_row('SELECT * FROM ' . $table_name . ' ORDER BY id DESC limit 1');
-    }else{
+    }elseif($a['id'] == 'random'){
+		$row_count = $wpdb->get_results( 'SELECT COUNT(*) FROM ' . $table_name, ARRAY_N);
+		$randomid = rand(1, $row_count[0][0]);/*need to see if there is a better way then double array to get data back*/
+		$row = $wpdb->get_row( $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE id = %d', $randomid) );
+	}else{
     	$id = $a['id'];
 		$row = $wpdb->get_row( $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE id = %d', $id) );
     }
