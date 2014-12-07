@@ -1,9 +1,9 @@
 <?php
-	function insert_testimonial($content, $author){
-
-	}
+	global $wpdb;
+	$plugin_table = 'testimonials_by_archon';
+	$table_name = $wpdb->prefix . $plugin_table;
+	$row_id = $wpdb->get_results( 'SELECT id, author FROM ' . $table_name, ARRAY_N);
 ?>
-
 <div class="wrap">
 	<div id="icon-options-general" class="icon32"></div>
 	<h2>Testimonials by Archon options</h2>
@@ -19,7 +19,7 @@
 					
 					<div class="postbox">
 					
-						<h3><span>Let's Get Started!</span></h3>
+						<h3><span>Add a new testimonial</span></h3>
 						<div class="inside">
 							<form method="post" action="">
 								<table class="form-table">
@@ -50,16 +50,39 @@
 
 					<div class="postbox">
 					
-						<h3><span>Most Recent Testimonial</span></h3>
+						<h3><span>Edit testimonials</span></h3>
 						<div class="inside">
-							<ul>
-							<li>
-								<?php echo do_shortcode('[tesimonial]'); ?>
-							</li>
-							<li>
-								<?php echo do_shortcode('[tesimonial id=random]'); ?>
-							</li>
-							</ul>
+							<select name="" id="">
+								<option value="">Testimonial to edit</option>
+								<?php foreach ($row_id as $val) { ?>
+									<option value="<?php echo $val[0]; ?>"><?php echo $val[1]; ?></option>
+								<?php } ?>
+							</select>
+							<form action="" method="post">
+								<table class="form-table">
+									<tbody>
+										<tr>
+											<td>
+												<label for="testimonial_content_edit">Testimonial Content</label>
+											</td>
+											<td>
+												<textarea cols="37" class="regular-text" value="" type="text" id="testimonial_content_edit" name="testimonial_content_edit"></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label for="testimonial_author">Edit Testimonial Author</label>
+											</td>
+											<td>
+												<input type="text" cols="37" class="regular-text" value="" id="testimonial_author_edit" name="testimonial_author_edit">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<p>
+									<input type="submit" value="Update" name="testimonial_submit_edit" class="button-primary"> 
+								</p>
+							</form>
 						</div> <!-- .inside -->
 					
 					</div> <!-- .postbox -->
