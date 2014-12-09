@@ -83,9 +83,6 @@ function testimonials_by_archon_options_page(){
 	if(!current_user_can('manage_options')){
 		wp_die('You do not have sufficient permissions to access this page.');
 	}
-
-	global $plugin_url;
-	
 	require('inc/options-page-wrapper.php');
 }
 
@@ -119,12 +116,22 @@ function testimonial_by_archon_shortcode( $atts ) {
 }
 add_shortcode( 'testimonial', 'testimonial_by_archon_shortcode' );
 
+/*
+ * Add the style sheet to all front facing pages and to the admin backend
+ */
+function add_stylesheet_to_all_other_places() {
+	wp_enqueue_style( 'style-name', plugins_url('css/main.css', __FILE__) );
+}
+add_action( 'wp_enqueue_scripts', 'add_stylesheet_to_all_other_places' );
 
 function add_stylesheet_to_admin() {
 	wp_enqueue_style( 'prefix-style', plugins_url('css/main.css', __FILE__) );
 }
 add_action( 'admin_enqueue_scripts', 'add_stylesheet_to_admin' );
 
+/*
+ * Add the javascript to the admin options page only
+ */
 function add_javascript_to_admin($hook) {
 	if ( 'settings_page_testimonials_by_archon' != $hook ) {
 		return;
