@@ -100,12 +100,12 @@
 					
 						<h3><span>Shortcode exsamples</span></h3>
 						<div class="inside">
-							<p>[tesimonial]</p>
-							<?php echo do_shortcode('[tesimonial]'); ?>
-							<p>[tesimonial id=1]</p>
-							<?php echo do_shortcode('[tesimonial id=1]'); ?>
-							<p>[tesimonial id=random]</p>
-							<?php echo do_shortcode('[tesimonial id=random]'); ?>
+							<p>[testimonial]</p>
+							<?php echo do_shortcode('[testimonial]'); ?>
+							<p>[testimonial id=1]</p>
+							<?php echo do_shortcode('[testimonial id=1]'); ?>
+							<p>[testimonial id=random]</p>
+							<?php echo do_shortcode('[testimonial id=random]'); ?>
 						</div> <!-- .inside -->
 						
 					</div> <!-- .postbox -->

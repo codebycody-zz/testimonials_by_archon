@@ -31,7 +31,6 @@ if(isset($_POST['testimonial_content']) && isset($_POST['testimonial_author'])){
 /*
  * create the database table needed for plugin when plugin is activated
  */
-
 function tba_create_table(){
 	global $wpdb;
 	$table_name = $wpdb->base_prefix . 'testimonials_by_archon';
@@ -48,7 +47,6 @@ register_activation_hook(__FILE__, 'tba_create_table');
 /*
  * delete the database table needed for plugin when plugin is deactivated
  */
-
 function tba_delete_table(){
 	global $wpdb;
 	$table_name = $wpdb->base_prefix . 'testimonials_by_archon';
@@ -60,10 +58,8 @@ register_deactivation_hook(__FILE__, 'tba_delete_table');
 
 /*
  * Add a link to our plugin in the admin menu
- * under 'Settings > Treehouse Badges'
- *
+ * under 'Settings > Testimonials by Archon'
  */
-
 function testimonials_by_archon_menu(){
 	/*
 	 * Use the add_options_page function
@@ -80,7 +76,9 @@ function testimonials_by_archon_menu(){
 }
 add_action('admin_menu', 'testimonials_by_archon_menu');
 
-
+/*
+ * Check if the user can manage plugin options
+ */
 function testimonials_by_archon_options_page(){
 	if(!current_user_can('manage_options')){
 		wp_die('You do not have sufficient permissions to access this page.');
@@ -91,15 +89,10 @@ function testimonials_by_archon_options_page(){
 	require('inc/options-page-wrapper.php');
 }
 
-function get_testimonial_by_id($id){
-	global $wpdb;
-	global $plugin_table;
-	$table_name = $wpdb->prefix . $plugin_table;
-	$row = $wpdb->get_row( $wpdb->prepare('SELECT * FROM '.$table_name.' WHERE id = %d', $id) );
-	return $row;
-}
-
-function tesimonial_by_archon_shortcode( $atts ) {
+/*
+ * get test
+ */
+function testimonial_by_archon_shortcode( $atts ) {
 	global $wpdb;
 	global $plugin_table;
 	$table_name = $wpdb->prefix . $plugin_table;
@@ -124,7 +117,7 @@ function tesimonial_by_archon_shortcode( $atts ) {
 	return $htmlString;
 
 }
-add_shortcode( 'tesimonial', 'tesimonial_by_archon_shortcode' );
+add_shortcode( 'testimonial', 'testimonial_by_archon_shortcode' );
 
 
 function safely_add_stylesheet_to_admin() {
