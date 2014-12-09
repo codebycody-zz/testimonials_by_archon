@@ -90,28 +90,26 @@
 				
 			</div> <!-- post-body-content -->
 			
-			<!-- sidebar -->
-			<div id="postbox-container-1" class="postbox-container">
-				
+			<!-- sidebar start -->
+			<div class="postbox-container" id="postbox-container-1">
 				<div class="meta-box-sortables">
-					
 					<div class="postbox">
-					
 						<h3><span>Shortcode exsamples</span></h3>
 						<div class="inside">
 							<p>[testimonial]</p>
-							<?php echo do_shortcode('[testimonial]'); ?>
+							<blockquote class="testimonial"><p>It was excellent! Please keep creating!</p></blockquote>
+							<p class="testimonial-author">Jane Doe</p>
 							<p>[testimonial id=1]</p>
-							<?php echo do_shortcode('[testimonial id=1]'); ?>
+							<blockquote class="testimonial"><p>As always, a pleasure to work with the Archon team</p></blockquote>
+							<p class="testimonial-author">Grey inc</p>
 							<p>[testimonial id=random]</p>
-							<?php echo do_shortcode('[testimonial id=random]'); ?>
+							<blockquote class="testimonial"><p>Archon did a great job on our project</p></blockquote>
+							<p class="testimonial-author">John Doe</p>
 						</div> <!-- .inside -->
-						
 					</div> <!-- .postbox -->
-					
 				</div> <!-- .meta-box-sortables -->
-				
-			</div> <!-- #postbox-container-1 .postbox-container -->
+			</div><!-- #postbox-container-1 .postbox-container -->
+			<!-- sidebar end -->
 			
 		</div> <!-- #post-body .metabox-holder .columns-2 -->
 		
