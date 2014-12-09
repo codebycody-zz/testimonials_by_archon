@@ -7,7 +7,6 @@
 <div class="wrap">
 	<div id="icon-options-general" class="icon32"></div>
 	<h2>Testimonials by Archon options</h2>
-	
 	<div id="poststuff">
 	
 		<div id="post-body" class="metabox-holder columns-2">
@@ -118,5 +117,4 @@
 		
 		<br class="clear">
 	</div> <!-- #poststuff -->
-	
 </div> <!-- .wrap -->

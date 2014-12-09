@@ -70,7 +70,7 @@ function testimonials_by_archon_menu(){
 		'Testimonials by Archon Plugin',
 		'Testimonials by Archon',
 		'manage_options',
-		'testimonials-by-archon',
+		'testimonials_by_archon',
 		'testimonials_by_archon_options_page'
 	);
 }
@@ -120,10 +120,17 @@ function testimonial_by_archon_shortcode( $atts ) {
 add_shortcode( 'testimonial', 'testimonial_by_archon_shortcode' );
 
 
-function safely_add_stylesheet_to_admin() {
+function add_stylesheet_to_admin() {
 	wp_enqueue_style( 'prefix-style', plugins_url('css/main.css', __FILE__) );
 }
-add_action( 'admin_enqueue_scripts', 'safely_add_stylesheet_to_admin' );
+add_action( 'admin_enqueue_scripts', 'add_stylesheet_to_admin' );
 
+function add_javascript_to_admin($hook) {
+	if ( 'settings_page_testimonials_by_archon' != $hook ) {
+		return;
+	}
+	wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . '/js/main.js' );
+}
+add_action('admin_enqueue_scripts', 'add_javascript_to_admin');
 
 ?>
