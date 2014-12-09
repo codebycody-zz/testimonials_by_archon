@@ -1,4 +1,4 @@
-tesimonials_by_archon
+testimonials_by_archon
 =====================
 
 WordPress plugin for saving and showing testimonials by Archon llc
