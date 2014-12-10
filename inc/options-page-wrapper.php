@@ -58,6 +58,7 @@
 								<?php } ?>
 							</select>
 							<form action="" method="post">
+								<input type="hidden" name="testimonial_id" value="1">
 								<table class="form-table">
 									<tbody>
 										<tr>

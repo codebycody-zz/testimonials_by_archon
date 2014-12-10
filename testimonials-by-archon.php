@@ -18,14 +18,27 @@ $plugin_table = 'testimonials_by_archon';
 
 
 /*
- * Check for testimonials options page input
+ * Check for add a new testimonial input
  */
 if(isset($_POST['testimonial_content']) && isset($_POST['testimonial_author'])){
 	global $wpdb;
 	$content = $_POST['testimonial_content'];
 	$author = $_POST['testimonial_author'];
-	$table_name = $wpdb->base_prefix . 'testimonials_by_archon';
-	$wpdb->insert($table_name, array('content' => $content,'author' => $author));
+	$table = $wpdb->base_prefix . 'testimonials_by_archon';
+	$wpdb->insert($table, array('content' => $content,'author' => $author));
+}
+
+/*
+ * Check for an update to testimonial input
+ */
+if(isset($_POST['testimonial_content_edit']) && isset($_POST['testimonial_author_edit']) && isset($_POST['testimonial_id'])){
+	global $wpdb;
+	$content = $_POST['testimonial_content_edit'];
+	$author = $_POST['testimonial_author_edit'];
+	$id = $_POST['testimonial_id'];
+	$table = $wpdb->base_prefix . 'testimonials_by_archon';
+	
+	$wpdb->update( $table, array('content' => $content, 'author' => $author), array('id' => $id), array('%s','%s') );
 }
 
 /*
