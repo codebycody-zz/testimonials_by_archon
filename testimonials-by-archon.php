@@ -149,6 +149,7 @@ function add_javascript_to_admin($hook) {
 	if ( 'settings_page_testimonials_by_archon' != $hook ) {
 		return;
 	}
+	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . '/js/main.js' );
 }
 add_action('admin_enqueue_scripts', 'add_javascript_to_admin');

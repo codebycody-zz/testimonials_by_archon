@@ -2,7 +2,7 @@
 	global $wpdb;
 	$plugin_table = 'testimonials_by_archon';
 	$table_name = $wpdb->prefix . $plugin_table;
-	$row_id = $wpdb->get_results( 'SELECT id, author FROM ' . $table_name, ARRAY_N);
+	$row_id = $wpdb->get_results( 'SELECT id, author, content FROM ' . $table_name, ARRAY_N);
 ?>
 <div class="wrap">
 	<div id="icon-options-general" class="icon32"></div>
@@ -51,12 +51,18 @@
 					
 						<h3><span>Edit testimonials</span></h3>
 						<div class="inside">
-							<select name="" id="">
+							<select name="" id="testimonial_dropdown">
 								<option value="">Testimonial to edit</option>
 								<?php foreach ($row_id as $val) { ?>
-									<option value="<?php echo $val[0]; ?>"><?php echo $val[1]; ?></option>
+									<option value="<?php echo $val[0]; ?>"><?php echo $val[1] . ' id=' . $val[0]; ?></option>
 								<?php } ?>
 							</select>
+							<?php foreach ($row_id as $val) { ?>
+								<div data-id="<?php echo $val[0]; ?>" style="display: none;">
+									<span data-type="author"><?php echo $val[1]; ?></span>
+									<span data-type="content"><?php echo $val[2]; ?></span>
+								</div>
+							<?php } ?>
 							<form action="" method="post">
 								<input type="hidden" name="testimonial_id" value="1">
 								<table class="form-table">
@@ -88,14 +94,14 @@
 					</div> <!-- .postbox -->
 					
 				</div> <!-- .meta-box-sortables .ui-sortable -->
-				
+
 			</div> <!-- post-body-content -->
 			
 			<!-- sidebar start -->
 			<div class="postbox-container" id="postbox-container-1">
 				<div class="meta-box-sortables">
 					<div class="postbox">
-						<h3><span>Shortcode exsamples</span></h3>
+						<h3><span>Shortcode Examples</span></h3>
 						<div class="inside">
 							<p>[testimonial]</p>
 							<blockquote class="testimonial"><p>It was excellent! Please keep creating!</p></blockquote>
