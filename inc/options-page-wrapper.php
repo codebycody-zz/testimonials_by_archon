@@ -8,16 +8,11 @@
 	<div id="icon-options-general" class="icon32"></div>
 	<h2>Testimonials by Archon options</h2>
 	<div id="poststuff">
-	
 		<div id="post-body" class="metabox-holder columns-2">
-		
 			<!-- main content -->
 			<div id="post-body-content">
-				
 				<div class="meta-box-sortables ui-sortable">
-					
 					<div class="postbox">
-					
 						<h3><span>Add a new testimonial</span></h3>
 						<div class="inside">
 							<form method="post" action="">
@@ -44,11 +39,8 @@
 								</p>
 							</form>
 						</div> <!-- .inside -->
-					
 					</div> <!-- .postbox -->
-
 					<div class="postbox">
-					
 						<h3><span>Edit testimonials</span></h3>
 						<div class="inside">
 							<select name="" id="testimonial_dropdown">
@@ -96,7 +88,6 @@
 				</div> <!-- .meta-box-sortables .ui-sortable -->
 
 			</div> <!-- post-body-content -->
-			
 			<!-- sidebar start -->
 			<div class="postbox-container" id="postbox-container-1">
 				<div class="meta-box-sortables">
@@ -117,9 +108,7 @@
 				</div> <!-- .meta-box-sortables -->
 			</div><!-- #postbox-container-1 .postbox-container -->
 			<!-- sidebar end -->
-			
 		</div> <!-- #post-body .metabox-holder .columns-2 -->
-		
 		<br class="clear">
 	</div> <!-- #poststuff -->
 </div> <!-- .wrap -->

@@ -78,7 +78,6 @@ function testimonials_by_archon_menu(){
 	 * Use the add_options_page function
 	 * add_options_page($page_title, $menu_title, $capability, $menu_slug, $function);
 	 */
-	
 	add_options_page(
 		'Testimonials by Archon Plugin',
 		'Testimonials by Archon',
@@ -100,7 +99,7 @@ function testimonials_by_archon_options_page(){
 }
 
 /*
- * get test
+ * get testimonials by shortcode
  */
 function testimonial_by_archon_shortcode( $atts ) {
 	global $wpdb;
