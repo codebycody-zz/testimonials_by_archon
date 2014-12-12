@@ -1,4 +1,4 @@
-=== Official Archon Testimonials Plugin ===
+=== Official Archon Testimonials ===
 Contributors: archonllc
 Tags: archon, testimonial, shortcode
 Requires at least: 3.0.1
