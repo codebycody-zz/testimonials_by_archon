@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Testimonials by Archon
- * Plugin URI: http://archonweb.com/testimonials-by-archon/
+ * Plugin URI: https://wordpress.org/plugins/official-archon-testimonials/
  * Description: Provides both widgets and shortcodes to help you display and manage your testimonials across your site.
  * Version: 1.0
  * Author: Cody Greene
